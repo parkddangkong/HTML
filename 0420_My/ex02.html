@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02.html</title>
+    <style>
+        #calc{
+            /* id = "calc*/
+            border: 2px solid grey;
+            box-shadow: 10px 10px 10px;
+            width: 400px;
+            margin: 20px;
+        }
+        .floor{
+            border: 2px dashed orange;
+        }
+        .top{
+            display:flex;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        input{
+            all: unset;
+            padding: 5px;
+            font-size: 40px;
+            text-align: right;
+            width: 100%;    /*지정한 너비에서 패딩과 보더를 포함하게 된다*/
+            padding-right: 20px;
+            box-sizing: border-box; 
+            border: 2px solid black;
+            /*
+                기본 요소의 자리차지는 [지정한크기][400] + padding(20) + boder(2) = 444 이지만
+                box-sizing을 border-box; 로 설정하면
+                [지정한 크기] = 전체 크기 - padding - border 로 계산한다
+                [400] = 요소크기(356)-padding(20)-border(2)로 계산한다
+            */
+        }
+        .subBtn{
+            flex:1;
+            height: 40px;
+            line-height: 40px;
+        }
+        .mainBtns{
+            display: flex;
+            flex-flow: wrap;
+        }
+        .mainBtn{
+            background-color: #eee;
+            width: 97px;
+            height: 60px;
+            border:1px solid black;
+            box-sizing: border-box;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            margin: 1px;
+            user-select: none;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>windows 계산기 화면 구현</h1>
+    <hr>
+
+    <div id="calc">
+        <div class="floor top">
+            <div class = "left">
+                표준
+            </div>
+            <div class="right">
+                ⌚
+            </div>
+        </div>
+        <div class="floor number">
+            <input type="number" value="0">
+        </div>
+
+        <div class="floor subBtn">
+            <div input type="subBtn" >MC</div>
+            <div input type="subBtn" >MR</div>
+            <div input type="subBtn">M+</div>
+            <div input type="subBtn">M-</div>
+            <div input type="subBtn">Ms</div>
+            <div input type="subBtn">Mv</div>
+            
+        </div>
+
+        <div class="floor mainBtn">
+            <div class="mainBtn">%</div>
+            <div class="mainBtn">CE</div>
+            <div class="mainBtn">C</div>
+            <div class="mainBtn">←</div>
+            <div class="mainBtn">%</div>
+            <div class="mainBtn">X</div>
+            <div class="mainBtn">√</div>
+            <div class="mainBtn">÷</div>
+            <div class="mainBtn">7</div>
+            <div class="mainBtn">8</div>
+            <div class="mainBtn">9</div>
+            <div class="mainBtn">x</div>
+            <div class="mainBtn">4</div>
+            <div class="mainBtn">5</div>
+            <div class="mainBtn">6</div>
+            <div class="mainBtn">-</div>
+            <div class="mainBtn">1</div>
+            <div class="mainBtn">2</div>
+            <div class="mainBtn">3</div>
+            <div class="mainBtn">+</div>
+            <div class="mainBtn">±</div>
+            <div class="mainBtn">0</div>
+            <div class="mainBtn">.</div>
+            <div class="mainBtn">=</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

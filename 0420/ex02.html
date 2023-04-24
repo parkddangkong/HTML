@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02.html</title>
+    <style>
+        #calc { /* id="calc" */
+            border: 2px solid grey;
+            box-shadow: 10px 10px 10px black;
+            width: 400px;
+            margin: 20px;
+        }
+        .floor {
+            /* border: 2px dashed orange; */
+        }
+        .top {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        input {
+            all: unset;
+            padding: 5px;
+            font-size: 40px;
+            text-align: right;
+            width: 400px;    /* 지정한 너비에서 패딩과 보더를 포함하게 한다 */
+            padding-right: 20px;
+            box-sizing: border-box;
+            border: 2px solid black;
+            /*
+                기본 요소의 자리차지는 [400] + padding(20) + border(2) = 444 이지만
+                box-sizing: border-box; 로 설정하면 
+                [400] = 요소 크기(356) - padding(20) - border(2) 로 계산해준다
+            */
+        }
+        .subBtns {
+            display: flex;
+            text-align: center;
+        }
+        .subBtn {
+            flex: 1;
+            height: 40px;
+            line-height: 40px;
+        }
+        .mainBtns {
+            display: flex;
+            flex-flow: wrap;
+        }
+        .mainBtn {
+            background-color: #eee;
+            width: 97px;
+            height: 60px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1px;
+            user-select: none;
+        }
+        .mainBtn:active {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>windows 계산기 화면 구현</h1>
+    <hr>
+
+    <style>
+        a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .test1 {
+            color: #07c35a;
+        }
+        .test2 {
+            color: skyblue;
+        }
+    </style>
+
+    <div class="test1">
+        <a href="https://www.naver.com">네이버</a>
+    </div>
+    <div class="test2">
+        <a href="https://www.daum.net">다음</a>
+    </div>
+
+    <div id="calc">
+
+        <div class="floor top">
+            <div class="left">
+                표준
+            </div>
+            <div class="right">
+                🕒
+            </div>
+        </div>
+
+        <div class="floor number">
+            <input type="text" value="0">
+        </div>
+
+        <div class="floor subBtns">
+            <div class="subBtn">MC</div>
+            <div class="subBtn">MR</div>
+            <div class="subBtn">M+</div>
+            <div class="subBtn">M-</div>
+            <div class="subBtn">MS</div>
+            <div class="subBtn">M∨</div>
+            <!-- ㄷ 한자 TAB -->
+        </div>
+
+        <div class="floor mainBtns">
+            <div class="mainBtn">%</div>
+            <div class="mainBtn">CE</div>
+            <div class="mainBtn">C</div>
+            <div class="mainBtn">←</div>
+            <div class="mainBtn">½</div>
+            <div class="mainBtn">x<sup>2</sup></div>
+            <div class="mainBtn">√</div>
+            <div class="mainBtn">÷</div>
+            <div class="mainBtn">7</div>
+            <div class="mainBtn">8</div>
+            <div class="mainBtn">9</div>
+            <div class="mainBtn">×</div>
+            <div class="mainBtn">4</div>
+            <div class="mainBtn">5</div>
+            <div class="mainBtn">6</div>
+            <div class="mainBtn">-</div>
+            <div class="mainBtn">1</div>
+            <div class="mainBtn">2</div>
+            <div class="mainBtn">3</div>
+            <div class="mainBtn">+</div>
+            <div class="mainBtn">±</div>
+            <div class="mainBtn">0</div>
+            <div class="mainBtn">.</div>
+            <div class="mainBtn">=</div>
+        </div>
+    </div>
+
+    <script>
+        const calc = document.getElementById('calc')
+        const calcTop = document.querySelector('.top')
+
+        calcTop.draggable = 'true'
+        calcTop.style.cursor = 'pointer'
+
+        top.ondragstart = (event) => {
+            const absTop = event.target.parentNode.getBoundingClientRect().top;
+            const absLeft = event.target.parentNode.getBoundingClientRect().left;
+            event.target.opacity = '0.5'
+            diffX = event.clientX - absLeft
+            diffY = event.clientY - absTop
+        }
+        top.ondragend = (event) => {
+            calc.style.position = 'absolute'
+            calc.style.left = (event.clientX - diffX) + 'px'
+		    calc.style.top = (event.clientY - diffY) + 'px'
+        }
+    </script>
+    
+</body>
+</html>

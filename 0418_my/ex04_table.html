@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex04_table.html</h1>
+    <hr>
+
+    <fieldset>
+        <legend>table 태그</legend>
+
+        <blockquote>
+            표를 그리시 위해 사용한다<br>
+            줄과 칸으로 구성하며, 태그 포함관계를 이해하고 있어야 한다
+        </blockquote>
+
+        <ul>
+            <li>table : 표 전체의 영역을 나타낸다</li>\
+            <li>tr : table row, 표 안에서의 한 줄을 나타낸다</li>
+            <li>td : table data, 줄 안에서의 한 칸을 나타낸다</li>
+            <li>th : table headline, td와 같으나 가운데 정렬 및 굵게가 적용된다</li>
+            <li><b>thead</b> : 표의 상단부를 나타낸다, 생략가능</li>
+            <li><b>today</b> : 표의 본문을 나타낸다, 생략가능</li>
+            <li><b>tfoot</b> : 표의 하단을 나타낸다, 생략가능</li>
+        </ul>
+    </fieldset>
+
+    <table border="20" cellpadding="10" cellspacing="0">
+        <th>
+        <th colspan="3">샘플 테이블 (1)</th>
+        <td rowspan="4">💖</td>
+         </th>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th><font color="blue">사진</font></th>
+        </tr>
+        <tr>
+            <td>이지은</td>
+            <td>31</td>
+            <td><img src="이지은.jpg" height="70"></td>
+        </tr>
+
+        <tr>
+            <td>지올팍</td>
+            <td>31</td>
+            <td><img src="지올팍.jpg" height="70"></td>
+        </tr>
+    </table>
+</body>
+</html>

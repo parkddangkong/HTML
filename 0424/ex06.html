@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06.html</title>
+    <style>
+        /* 후손 선택자 */
+        #list li {          /* #list 하위의 모든 li 태그에 적용 (깊이는 상관없음) */
+            color: grey;
+            font-weight: bold;
+        }
+        /* 자손 선택자*/
+        #list > li {        /* #list 바로 아래 있는 li에게만 적용 (깊이는 1) */
+            color: red;
+        }
+        
+        #list > li > ol > li > ul > li {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>자손 선택자, 후손 선택자</h1>
+    <hr>
+    <ul id="list">
+        <li>네트워크
+            <ol>
+                <li>네트워크 기초</li>
+                <li>CCNP Route</li>
+                <li>CCNP Switch</li>
+            </ol>
+        </li>
+        <li>시스템
+            <ol>
+                <li>Linux</li>
+                <li>Windows Server</li>
+            </ol>
+        </li>
+        <li>개발
+            <ol>
+                <li>Java</li>
+                <li>JSP
+                    <ul>
+                        <li>directive</li>
+                        <li>declaration</li>
+                        <li>scriptlet</li>
+                        <li>expression</li>
+                        <li>action tag</li>
+                        <li>EL tag</li>
+                        <li>JSTL</li>
+                    </ul>
+                </li>
+                <li>Spring</li>
+            </ol>
+        </li>
+        <li>보안
+            <ol>
+                <li>Network Security</li>
+                <li>System Security</li>
+                <li>Web Security</li>
+            </ol>
+        </li>
+    </ul>
+    
+</body>
+</html>

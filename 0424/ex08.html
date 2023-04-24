@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.text {
+            overflow: hidden;   /* 범위를 벗어나는 요소는 보여주지 않는다 */
+            color: red;
+            transition-duration: 0.5s;
+            height: 25px;
+        }
+        /* 체크된 input요소 바로 다음에 있는 div */
+        /* 같은 부모 요소를 가지는 바로 다음 형제 노드 */
+        input[type="checkbox"]:checked + div.text {
+            transition-duration: 0.5s;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex08.html</h1>
+    <hr>
+
+    <label id="label" for="chk">
+        <input type="checkbox" id="chk" name="chk">동의
+        <div class="text">
+            약관에 동의하셔야 진행 가능합니다
+        </div>
+    </label>
+    
+</body>
+</html>

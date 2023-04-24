@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01.html</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        td, th {
+            padding: 5px 10px;
+            border: 1px solid grey;
+        }
+        h3.block {
+            background-color: salmon;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+        tr:nth-child(2n + 1) {  /* tr중에서 홀수번째 순번인 요소 */
+            background-color: lemonchiffon;
+        }
+        tr:nth-child(2n) {      /* tr중에서 짝수번째 순번인 요소 */
+            background-color: linen;
+        }
+        tr:first-child {    /* 같은 속성을 넣더라도, 적용되는 순서에 따라 결과가 달라진다 */
+            background-color: salmon;
+            color: white;   /* 개별 속성은 나중에 작성하는 것이 좋다 */
+        }
+    </style>
+</head>
+<body>
+    <h1>ex01.html - css selector</h1>
+    <hr>
+    <h3>선택자는 특정 HTML 태그를 선택할 때 사용하는 기능이다</h3>
+    <h3 class="block">선택자 { 스타일속성: 스타일값; }</h3>
+    <table>
+        <tr>
+            <th>선택자</th>
+            <th>형태</th>
+            <th>예시</th>
+        </tr>
+        <tr>
+            <td>전체 선택자</td>
+            <td>*</td>
+            <td>*</td>
+        </tr>
+        <tr>
+            <td>태그 선택자</td>
+            <td>태그</td>
+            <td>h1</td>
+        </tr>
+        <tr>
+            <td>아이디 선택자</td>
+            <td>#아이디</td>
+            <td>#header</td>
+        </tr>
+        <tr>
+            <td>클래스 선택자</td>
+            <td>.클래스</td>
+            <td>.item</td>
+        </tr>
+        <tr>
+            <td>후손 선택자</td>
+            <td>선택자 선택자</td>
+            <td>section article</td>
+        </tr>
+        <tr>
+            <td>자손 선택자</td>
+            <td>선택자 > 선택자</td>
+            <td>ul > li</td>
+        </tr>
+    </table>
+    
+</body>
+</html>
