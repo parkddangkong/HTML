@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소녀나라</title>
+    <h1>소녀나라</h1>
+    <hr>
+    
+    <style>
+    ul{
+        width:1020px;
+        height:40px;
+        margin:auto;
+        list-style: none;
+        padding-left:0;
+        display: flex;
+        background-image: url('ul_background.jpg');
+
+    }
+    
+    li{
+        /* border: 1px dashed red; */
+        flex:1;
+        text-align: center;
+        line-height: 40px; /* 한 줄이 세로로 40px를 차지하게 한다*/
+        margin:auto;
+        color:black;
+        flex:1;
+        font-size: 11px;
+        font-weight: bold; /*텍스트 굵기*/
+        transition-duration: 0.5s; /*속성값이 수치로 연산될 수 있는 경우 적용 가능*/
+        /*display: block;*/
+        /*수치 변화가 아니므로, 부드러운 변경이 적용되지 않음*/
+        opacity: 0.2;
+
+    }
+    li:hover{
+        width:1020px;
+        height:40px;
+        margin:auto;
+        cursor: pointer;
+        background-color: pink;
+        color: white;
+        background-image: url('bg_over.png');
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        /*display : none;*/
+        opacity: 1;
+        transition-duration: 0.5s;
+
+    }
+    .first.menu{
+        color: purple;
+    }
+    .first.menu:hover{
+        width:1020px;
+        height:40px;
+        margin:auto;
+        cursor: pointer;
+        background-color: pink;
+        color: white;
+        background-image: url('bg_over.png');
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .second.menu{
+        color: pink;
+    }
+    .second.menu:hover{
+        width:1020px;
+        height:40px;
+        margin:auto;
+        cursor: pointer;
+        background-color: pink;
+        color: white;
+        background-image: url('bg_over.png');
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+</head>
+<body>
+    <ul>
+        <div class="menu">
+            <ul>
+                <li>〓</li>
+                <li class = "first menu">베스트</li>
+                <li class = "second menu">신상</li>
+                <li>아우터</li>
+                <li>상의</li>
+                <li>셔츠/블라우스</li>
+                <li>트레이닝</li>
+                <li>베이직</li>
+                <li>원피스</li>
+                <li>스커트</li>
+                <li>팬트</li>
+                <li>가방</li>
+                <li>신발</li>
+                <li>악세사리</li>
+            </ul>
+       
+        </div>
+    </ul>
+</body>
+</html>
