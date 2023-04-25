@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        body { /*body는 HTML 문서의 전체 콘텐츠를 감싸는 요소*/
+            font-family: 'Noto Sans KR';
+            /*font-family 속성은 웹페이지에서 사용할 폰트를 지정하는 CSS 속성*/
+            margin: 0;
+            /*모든 방향의 margin 값을 0으로 설정. 
+            따라서 해당 요소 주위에 어떠한 여백도 없도록 만들어 줌.*/
+            padding: 0;
+            /*CSS 속성 중 하나로, 요소의 내부 여백(padding)을 0으로 설정*/
+        }
+        header { /*header에 스타일을 적용하여 
+            페이지 상단에 고정된 위치, 배경색, 글꼴, 여백 등을 설정*/
+            display: flex;
+            justify-content: space-between; /*어떻게 배치할지를 지정하는 CSS 속성*/
+            /*space-between 값은 flex items 사이에 동일한 간격을 두고 배치*/
+        }
+        ul {
+            list-style: none;
+            /*list-style 속성은 HTML 목록 요소(<ul>, <ol>)에 
+            대한 마커(marker) 모양 및 위치를 지정하는 CSS 속성
+            none 값은 목록 요소의 마커를 제거*/
+            display: flex;
+            align-items: center;
+            /*수직 정렬 방식을 설정하는 CSS 속성*/
+            padding-left: 0;
+            /*박스 모델의 내부 여백 중 왼쪽(padding)을 지정하는 속성*/
+        }
+        li {
+            margin: 10px;   
+            /*CSS의 속성 중 하나로, 모든 방향에 대해 10px의 마진을 설정*/
+        }
+        li img {
+            border-radius: 50%;
+            /*웹 페이지에서 요소의 모서리를 둥글게 만드는 데 사용*/
+        }
+        a {
+            text-decoration: none;
+            /* 텍스트에 대한 밑줄, 줄 긋기, 취소선 등의 장식을 제거하는 데 사용*/
+            color: inherit;
+            /*하나로, 부모 요소의 텍스트 
+            색상을 상속받아 자식 요소의 색상을 설정하는 데 사용*/
+        }
+        a:hover {
+            text-decoration: underline;
+            /*텍스트에 밑줄을 추가하는 데 사용*/
+        }
+        .dotmenu {
+            display: flex;
+            flex-flow: wrap;
+            font-size: 22px;
+            font-weight: bold;
+            width: 17px;
+            color: grey;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .dotmenu:hover > .back {
+            z-index: -1;
+            /*요소의 쌓이는 순서를 조절하는 데 사용*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-55%, -55%);
+            /* CSS에서 요소의 변형을 지정하는 데 사용*/
+            width: 200%;
+            height: 200%;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+        .dot {
+            width: 3px;
+            height: 3px;
+            border-top: 3px solid grey;
+            margin: -1px 1px;
+            /*첫번째는 위, 두번째는 아래*/
+            margin-bottom: 0;
+        }
+        main {
+            display: flex;
+            flex-direction: column; /* main축을 90도 전환 */
+            justify-content: center;
+            align-items: center;
+            height: 70vh;       /* 높이 비율 */
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search {
+            display: flex;
+            margin: 20px auto;
+            width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .search:hover {
+            box-shadow: 1px 1px 1px darkgrey;
+        }
+        .search input {
+            all: unset;
+            padding: 10px;
+            width: 400px;
+        }
+        .search > div {
+            margin: 0 10px;
+        }
+        main > .btns > button {
+            all: unset;
+            border: 0;
+            padding: 5px 10px;
+            height: 30px;
+            font-size: 14px;
+            margin: 0 20px;
+            background-color: #fafafa;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 0.5px solid transparent;
+        }
+        main > .btns > button:hover {
+            border: 0.5px solid darkgray;
+            box-shadow: 1px 1px #eee;
+        }
+        .btns {
+            display: flex;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+
+
+        footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            background-color: #dadce0;
+        }
+        .bottom {
+            color: #555;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            background-color: #eee;
+            margin: 1px;
+            padding: 0 10px;
+        }
+        .bottom.sa {
+            display: flex;
+            justify-content: space-around;
+        }
+        .bottom.sa > div {
+            display: flex;
+            flex: 1;
+        }
+        .bottom.sa > div > div {
+            margin: 10px;
+                
+        }
+        .bottom.sa > div:first-child {
+            justify-content: flex-start;
+        }
+        .bottom.sa > div:last-child {
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top">
+            <ul>
+                <li><a href="">Google 정보</a></li>
+                <li><a href="">스토어</a></li>
+            </ul>
+        </div>
+        <div class="top">
+            <ul>
+                <li><a href="">Gmail</a></li>
+                <li><a href="">이미지</a></li>
+                <li>
+                    <div class="dotmenu">
+                        <div class="back"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/danbi.jpg" alt="" width="35">
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="logo">
+            <img src="img/googlelogo_color_272x92dp.png" width="272" height="92">
+        </div>
+        <div class="search">
+            <div class="">🔍</div>
+            <div class=""><input type="search"></div>
+            <div class="">⌨</div>
+            <div class="">🎙</div>
+            <div class="">📷</div>
+        </div>
+        <div class="btns">
+            <button>Google 검색</button>
+            <button>I'm Feeling Lucky</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="bottom">대한민국</div>
+        <div class="bottom sa">
+            <div class="">
+                <div class=""><a href="">광고</a></div>
+                <div class=""><a href="">비즈니스</a></div>
+                <div class=""><a href="">검색의 원리</a></div>
+            </div>
+            <div class="">
+                <div class=""><a href="">개인정보처리방침</a></div>
+                <div class=""><a href="">약관</a></div>
+                <div class=""><a href="">설정</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const input = document.querySelector('input[type="search"]')
+        const searchDiv = document.querySelector('div.search')
+
+        input.onfocus = () => searchDiv.style.boxShadow = '1px 1px 1px darkgrey'
+        input.onblur = () => searchDiv.style.boxShadow = 'none'
+    </script>
+    
+</body>
+</html>
